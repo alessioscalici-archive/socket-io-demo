@@ -1,0 +1,17 @@
+doctype html
+html.no-js(lang='en' ng-app='DemoApp')
+  head
+    title Alessio Scalici - demo app
+
+    link(href='css/main.min.css', rel='stylesheet')
+
+    meta(charset='utf8')
+    meta(viewport='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+  body
+
+    ui-view
+
+
+  script(src='http://185.13.90.140:8081/socket.io/socket.io.js')
+  script(src='js/app.min.js')
