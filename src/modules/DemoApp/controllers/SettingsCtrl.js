@@ -13,13 +13,9 @@ angular.module('DemoApp').controller('SettingsCtrl', function ($scope, Current){
   'use strict';
 
 
-  // ===================== EXPOSED METHODS ================= //
-
-
-
-
   // ===================== INITIALIZATION ================= //
 
+  // set the settings model
   $scope.settings = Current.settings;
 
 

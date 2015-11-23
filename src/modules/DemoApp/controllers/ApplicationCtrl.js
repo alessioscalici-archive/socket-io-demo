@@ -13,8 +13,10 @@ angular.module('DemoApp').controller('ApplicationCtrl', function ($scope, $state
   'use strict';
 
 
-
+  // contains the incoming and outgoing messages
   $scope.messages = [];
+
+  // true if there is an unread message, false otherwise
   $scope.unreadMsgFlag = false;
 
 
@@ -23,9 +25,12 @@ angular.module('DemoApp').controller('ApplicationCtrl', function ($scope, $state
   var listeners = [
 
     $scope.$on('NEW_MESSAGE', function (ev, data) {
+
+      // add the message to the collection
       data.date = new Date();
       $scope.messages.push(data);
 
+      // we are not in the chat view, let the chat button blink!
       if ($state.current.name !== 'app.chat') {
         $scope.unreadMsgFlag = true;
       }

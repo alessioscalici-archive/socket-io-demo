@@ -24,10 +24,17 @@ angular.module('DemoApp').directive('myCarousel', function ($timeout, Current) {
 
       // ======================== METHODS ==================== //
 
+      /**
+       * Goes to the next slide. If there is no next slide, loads a new one using the provided function
+       */
       scope.nextSlide = function () {
+
+        // load a new image if we are on the last slide
         if ((typeof scope.loadImage === 'function') && scope.images.length === scope.currentIndex + 1) {
           scope.loadImage();
         }
+
+        // go to the next slide
         if (scope.currentIndex < scope.images.length - 1) {
           element.find('li').removeClass('active');
           $timeout(function () {
@@ -36,7 +43,9 @@ angular.module('DemoApp').directive('myCarousel', function ($timeout, Current) {
         }
       };
 
-
+      /**
+       * Goes to the previous slide if any
+       */
       scope.prevSlide = function () {
         if (scope.currentIndex > 0) {
           element.find('li').removeClass('active');

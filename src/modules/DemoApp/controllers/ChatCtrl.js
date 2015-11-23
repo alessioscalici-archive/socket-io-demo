@@ -15,6 +15,13 @@ angular.module('DemoApp').controller('ChatCtrl', function ($scope, Current, Chat
 
   // ===================== EXPOSED METHODS ================= //
 
+  /**
+   * @ngdoc method
+   * @methodOf DemoApp.controller:ChatCtrl
+   * @name postMsg
+   * @description posts a new message: emits the socket.io "message" event and adds the message
+   * to the collection as outgoing
+   */
   $scope.postMsg = function () {
 
     var msg = {

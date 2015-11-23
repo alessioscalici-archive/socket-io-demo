@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,IAAK;EACH,gBAAgB,EAAE,IAAI",
-"sources": ["../src/sass/_carousel.scss"],
-"names": [],
-"file": "style.css"
-}
