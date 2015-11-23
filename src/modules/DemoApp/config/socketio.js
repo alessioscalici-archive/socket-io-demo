@@ -2,16 +2,16 @@
  * @ngdoc object
  * @name socketio
  *
- * @requires socketFactory, URL
- *
  * @description
  *
- * The io socket configuration for the chat
+ * Socket io client onfiguration
  *
  */
-angular.module('DemoApp').run( function (socketFactory, URL) {
-  var ChatSocket = socketFactory({
-    ioSocket: io.connect(URL.socketio)
+angular.module('DemoApp').run(function ($rootScope, ChatSocket) {
+
+  ChatSocket.on('message', function (data) {
+    $rootScope.$broadcast('NEW_MESSAGE', data);
+    $rootScope.$digest();
   });
-  ChatSocket.forward('message');
+
 });

@@ -9,6 +9,8 @@ var express = require('express'),
 // serve the client
 app.use(express.static(__dirname + '/build'));
 
+// serve the coverage
+app.use('/coverage', express.static(__dirname + '/report/coverage'));
 
 
 

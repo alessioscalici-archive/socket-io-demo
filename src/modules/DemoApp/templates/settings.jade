@@ -1,1 +1,19 @@
-h1 settings.jade
+
+my-accordion
+  my-accordion-pane(header='Photo settings')
+
+    .stn-block
+      label.stn-label Width:
+      span {{settings.carousel.width}}px
+      input(type='number' min='0' ng-model='settings.carousel.width')
+
+    .stn-block
+      label.stn-label Height:
+      span {{settings.carousel.height}}px
+      input(type='number' min='0' ng-model='settings.carousel.height')
+
+  my-accordion-pane(header='Chat settings')
+
+    .stn-block
+      label.stn-label Nickname
+      input(ng-model='settings.chat.username')

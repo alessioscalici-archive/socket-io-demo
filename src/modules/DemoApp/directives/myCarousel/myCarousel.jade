@@ -1,0 +1,8 @@
+
+.my-carousel(ng-style='{height: settings.height + "px"}')
+  .my-carousel-controls(ng-swipe-left='nextSlide()' ng-swipe-right='prevSlide()')
+    button(ng-click='prevSlide()') <
+    button(ng-click='nextSlide()') >
+  ul(ng-style='{height: settings.height + "px"}')
+    li(ng-repeat='img in images')
+      img(ng-src='{{img.source}}')

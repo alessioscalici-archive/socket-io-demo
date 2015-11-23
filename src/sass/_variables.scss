@@ -1,0 +1,23 @@
+
+
+$bp-small: "only screen and (max-width : 320px)";
+$bp-medium: "only screen and (min-width : 321px)";
+$bp-large: "only screen and (min-width : 600px)";
+
+$body-width: 600px;
+
+$brand-color: #86A9DA;
+
+
+$menu-bar-height: 32px;
+$menu-bar-z-index: 8000;
+$menu-button-bg-inactive: #fff;
+$menu-button-bg-active: $brand-color;
+
+
+
+$chat-form-height: $menu-bar-height;
+$chat-form-z-index: $menu-bar-z-index;
+
+$chat-message-bg-color: lighten($brand-color, 10%);
+$chat-message-border-radius: 1em;

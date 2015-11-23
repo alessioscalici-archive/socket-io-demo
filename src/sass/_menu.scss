@@ -1,0 +1,52 @@
+
+
+#app-wrapper {
+
+  @include stretch();
+
+  #menu-bar {
+
+    @include display-flex(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+
+    position: fixed;
+    height: $menu-bar-height;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: $menu-bar-z-index;
+
+    button {
+      @include appearance(none);
+      @include flex-grow(1);
+      border: 2px solid black;
+      background: $menu-button-bg-inactive;
+
+      &.active {
+        background: $menu-button-bg-active;
+      }
+    }
+
+    @include keyframes(blink) {
+      0% { background: $menu-button-bg-inactive }
+      50% { background: $menu-button-bg-inactive }
+      50.01% { background: $menu-button-bg-active }
+      100% { background: $menu-button-bg-active }
+    }
+
+    .blinking{
+      @include animation (blink 0.7s infinite linear alternate);
+    }
+
+  }
+
+  #content-view {
+    margin-top: $menu-bar-height;
+    width: 100%;
+    padding-top: 5px;
+
+    @include stretch();
+  }
+
+}

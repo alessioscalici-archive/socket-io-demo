@@ -9,7 +9,7 @@
  * The controller of the Settings view
  *
  */
-angular.module('DemoApp').controller('SettingsCtrl', function ($scope){
+angular.module('DemoApp').controller('SettingsCtrl', function ($scope, Current){
   'use strict';
 
 
@@ -18,10 +18,9 @@ angular.module('DemoApp').controller('SettingsCtrl', function ($scope){
 
 
 
-
-
   // ===================== INITIALIZATION ================= //
 
+  $scope.settings = Current.settings;
 
 
 

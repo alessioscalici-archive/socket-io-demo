@@ -1,2 +1,11 @@
-
-h1 Hi I am the chat template
+#messages-view
+  spinner#messages-spinner(start-visible='true')
+  ul.message-list
+    li(ng-repeat='msg in messages')
+      message-item(message='msg')
+    li#message-bottom(smooth-scroll='')
+  form#message-input
+    spinner#new-message-spinner
+    input(type='text' ng-model='newMessageText' placeholder='Say something...')
+    button#submit-text(type='submit' ng-click='postMsg()' ng-disabled='!newMessageText || postingMessage' aria-label='Send') Send
+      span.glyphicon.glyphicon-share-alt

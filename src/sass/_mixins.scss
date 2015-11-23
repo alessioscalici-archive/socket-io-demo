@@ -1,0 +1,13 @@
+
+// simulates text stroke using text shadow
+
+@mixin text-stroke-with-shadow($thickness, $color, $blur) {
+  @include text-shadow( $thickness 0 $blur $color,
+    (-$thickness) 0 $blur $color,
+    0 $thickness $blur $color,
+    0 (-$thickness) $blur $color,
+    ($thickness/2) ($thickness/2) $blur $color,
+    ((-$thickness)/2) ((-$thickness)/2) $blur $color,
+    ($thickness/2) ((-$thickness)/2) $blur $color,
+    ((-$thickness)/2) ($thickness/2) $blur $color);
+}

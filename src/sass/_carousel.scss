@@ -1,0 +1,64 @@
+
+.my-carousel {
+
+  position: relative;
+  width: 100%;
+  text-align: center;
+
+  ul {
+
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      @include opacity(0);
+      @include single-transition(opacity, .5s);
+
+      &.active {
+        @include opacity(1);
+        @include single-transition(opacity, .5s);
+      }
+    }
+  }
+
+  .my-carousel-controls {
+
+    @include display-flex(flex);
+    @include justify-content(space-between);
+
+    position: absolute;
+    z-index: 2000;
+    width: 100%;
+    height: 80%;
+    top: 10%;
+
+
+    button {
+      @include appearance(none);
+      border: none;
+      background-color: transparent;
+
+      color: white;
+      min-width: 55px;
+      font-size: 4em;
+
+      @include text-stroke-with-shadow(3px, #000, 3px);
+
+      &:focus {
+        outline:none;
+      }
+
+      &:hover {
+        color: $brand-color;
+      }
+    }
+
+  }
+}
+
+

@@ -1,0 +1,49 @@
+my-accordion {
+
+
+  my-accordion-pane{
+
+    padding-left: .5em;
+
+    a {
+      font-size: 1.5em;
+      color: black;
+      text-decoration: none;
+      padding-left: .5em;
+
+      &:hover {
+        color: $brand-color;
+      }
+    }
+
+    &:before {
+      content: "▶";
+      display: inline;
+    }
+
+    .ma-pane-content {
+
+      overflow: hidden;
+      height: 0;
+      @include single-transition(height, .5s, ease);
+
+      padding-left: 1em;
+      margin-top: 1em;
+
+    }
+
+    &.open {
+      .ma-pane-content {
+        overflow: hidden;
+        height: 200px;
+        @include single-transition(height, .5s, ease);
+
+      }
+
+      &:before {
+        content: "▼";
+        display: inline;
+      }
+    }
+  }
+}

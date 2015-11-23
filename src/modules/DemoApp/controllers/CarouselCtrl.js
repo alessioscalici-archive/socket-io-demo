@@ -9,7 +9,7 @@
  * The controller of the Carousel view
  *
  */
-angular.module('DemoApp').controller('CarouselCtrl', function ($scope){
+angular.module('DemoApp').controller('CarouselCtrl', function ($scope, $timeout, Current, LoremPixelSvc){
   'use strict';
 
 
@@ -17,17 +17,16 @@ angular.module('DemoApp').controller('CarouselCtrl', function ($scope){
 
 
 
-
-
+  $scope.loadNewPicture = function () {
+    $scope.images.push({ source: LoremPixelSvc.getRandomPicUrl() });
+  };
 
   // ===================== INITIALIZATION ================= //
 
 
-  angular.element(document.querySelector('.rn-carousel-control-prev')).on('click', function () {
-    console.log('PREV!');
-  });
-  angular.element(document.querySelector('.rn-carousel-control-next')).on('click', function () {
-    console.log('NEXT!');
-  });
+  $scope.images = [];
+
+
+
 
 });

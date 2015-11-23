@@ -1,0 +1,7 @@
+.message
+  .header
+    .userdate
+      span.username {{msg.user}}
+      span.date {{msg.date | date:'medium'}}
+  .body
+    .text {{msg.message}}

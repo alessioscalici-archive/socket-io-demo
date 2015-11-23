@@ -1,6 +1,9 @@
 
-button(ui-sref='app.chat') chat
-button(ui-sref='app.carousel') carousel
-button(ui-sref='app.settings') settings
+#app-wrapper
+  #menu-bar
+    button(ui-sref='app.chat' active-spy='' ng-click='unreadMsgFlag=false' ng-class='{ blinking: unreadMsgFlag }' ) Chat
+    button(ui-sref='app.carousel' active-spy='') Photos
+    button(ui-sref='app.settings' active-spy='') Settings
 
-ui-view
+  #content-view
+    ui-view

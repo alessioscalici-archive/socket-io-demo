@@ -1,0 +1,117 @@
+
+
+
+#app-wrapper {
+
+
+  #message-input {
+
+    @include stretch-x();
+
+    @include display-flex(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-end);
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: $body-width;
+    margin: 0 auto;
+
+    height: $chat-form-height;
+
+    border: 2px solid black;
+
+    input {
+      @include flex-grow(1);
+
+      padding-left: 1em;
+    }
+
+
+    button {
+      border: none;
+      background: darken($brand-color, 15%);
+
+      &:hover {
+        background: $brand-color;
+      }
+
+      &:disabled {
+        background: initial;
+      }
+    }
+
+    @media #{$bp-medium} {
+      height: $menu-bar-height * 1.5;
+
+      input, button {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  .message-list {
+
+    @include display-flex(flex);
+    @include flex-direction(column);
+    @include align-items(flex-start);
+
+    li.from-me {
+      @include align-self(flex-end);
+    }
+
+  }
+
+  .message {
+
+
+    @include border-radius($chat-message-border-radius);
+    @include border-bottom-left-radius(0);
+
+    background-color: $chat-message-bg-color;
+    padding: 1em;
+    margin: 5px;
+    border: 2px solid $chat-message-bg-color;
+    overflow: hidden;
+
+    max-width: 300px;
+
+
+
+    .userdate {
+      @include display-flex(flex);
+      @include flex-direction(row);
+
+      margin-bottom: .5em;
+
+      .username {
+        font-weight: bold;
+      }
+
+      .date {
+        font-size: .8em;
+        color: #222;
+        padding: 0 1em;
+      }
+    }
+
+
+
+
+
+    &.from-me {
+      @include border-bottom-left-radius($chat-message-border-radius);
+      @include border-bottom-right-radius(0);
+      background-color: #fff;
+      text-align: right;
+
+      .userdate {
+
+        @include flex-direction(row-reverse);
+      }
+    }
+  }
+
+}

@@ -10,8 +10,7 @@
  *
  */
 angular.module('DemoApp', [
+  'ngTouch',
   'ui.router',
-  'btford.socket-io',
-  'angular-carousel',
   'templates-main'
 ]);

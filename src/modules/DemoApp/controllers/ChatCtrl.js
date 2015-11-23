@@ -9,34 +9,33 @@
  * The controller of the Chat view
  *
  */
-angular.module('DemoApp').controller('ChatCtrl', function ($scope){
+angular.module('DemoApp').controller('ChatCtrl', function ($scope, Current, ChatSocket){
   'use strict';
 
 
   // ===================== EXPOSED METHODS ================= //
 
+  $scope.postMsg = function () {
 
+    var msg = {
+      user: Current.settings.chat.username,
+      date: new Date(),
+      message: $scope.newMessageText,
+      outgoing: true
+    };
+
+    ChatSocket.emit('message', msg);
+    $scope.messages.push(msg);
+    $scope.newMessageText = '';
+  };
 
 
 
 
   // ===================== INITIALIZATION ================= //
 
-
-  var listeners = [
-
-    $scope.$on('socket:message', function (ev, data) {
-      console.log('message!', data);
-    }),
-
-    // detach all listeners when destroying the scope
-    $scope.$on('$destroy', function (ev) {
-      angular.forEach(listeners, function (detach) {
-        detach();
-      });
-    })
-
-  ];
+  // if we are instantiating this controller, we assume the messages all read
+  $scope.unreadMsgFlag = false;
 
 
 });

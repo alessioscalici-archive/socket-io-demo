@@ -1,0 +1,29 @@
+
+.stn-block {
+
+  margin-bottom: 1em;
+
+  .stn-label {
+    font-weight: bold;
+
+    &+span {
+      margin-left: 1em;
+    }
+  }
+
+
+
+  input {
+
+    display: block;
+    padding: .5em;
+    border: none;
+    border-bottom: 2px solid gray;
+
+    &:focus, &:hover {
+      outline: 0;
+      border-color: $brand-color;
+    }
+  }
+
+}

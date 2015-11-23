@@ -1,0 +1,21 @@
+
+#app-wrapper {
+
+  #menu-bar {
+    max-width: $body-width;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    @media #{$bp-medium} {
+      height: $menu-bar-height * 1.5;
+      button {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  max-width: $body-width;
+  margin: 0 auto;
+
+}
